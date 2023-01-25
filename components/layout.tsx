@@ -1,10 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 
-export default function Layout({ children }: any) {
+
+
+export default function Layout({ children, page }: any) {
+
+	const NavItem = ({ img, text }: any) =>
+		<div className={"flex items-center px-2 py-1 cursor-pointer hover:bg-yellow-600 hover:text-white text-sm rounded " + (page == text && "bg-yellow-600 text-white")}>
+			<img src={img} className="h-10 w-10" alt="" />
+			<span className="mx-3">{text}</span>
+		</div>
+
 	return (
 		<main className="xl:h-screen xl:overflow-hidden">
-
 			<div className="p-2 w-full bg-[rgb(22,22,22)]">
 				<div className="p-2 text-gray-700 rounded-lg  font-medium capitalize">
 					<i className="fas fa-brands fa-twitter"></i>
@@ -20,23 +28,12 @@ export default function Layout({ children }: any) {
 				<span className="px-4 text-yellow-500 mr-2 border-r border-yellow-500">
 					Fluffy Games
 				</span>
-				<span className="px-2 py-1 cursor-pointer hover:bg-gray-800 hover:text-gray-300 text-sm rounded">
-					<i className="w-8 fas fa-stream p-2 bg-gray-800 rounded-full">
-					</i>
-					<span className="mx-3">Ticket Rush</span>
-				</span>
 
-				<span className="px-2 py-1 cursor-pointer hover:bg-gray-800 hover:text-gray-300 text-sm rounded">
-					<i className="w-8 fas fa-th p-2 bg-gray-800 rounded-full">
-					</i>
-					<span className="mx-3">Coinflip</span>
-				</span>
 
-				<span className="px-2 py-1 cursor-pointer hover:bg-gray-100 hover:text-gray-300 text-sm rounded">
-					<i className="w-8 fas fa-th p-2 bg-gray-800 rounded-full">
-					</i>
-					<span className="mx-3">Jackpot</span>
-				</span>
+				<NavItem text="Ticket Rush" img="https://img.icons8.com/3d-fluency/94/null/two-tickets--v1.png" />
+				<NavItem text="Coinflip" img="https://img.icons8.com/cotton/64/null/coins--v1.png" />
+				<NavItem img="https://img.icons8.com/arcade/64/null/win.png" text="Jackpot" />
+				<NavItem text="Cra$h" img="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/null/external-variable-line-chart-plotted-isolated-on-a-white-background-business-color-tal-revivo.png" />
 
 				<span className="items-center flex gap-10 cursor-pointer  ml-auto mr-3">
 					<Link href="/terms">HOW TO PLAY</Link>
