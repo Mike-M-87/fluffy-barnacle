@@ -124,17 +124,18 @@
 
 #euro {
   width: 400px;
-  height: 400px;
+  height: 420px;
   position: relative;
   transition: -webkit-transform 1s ease-in;
-  cursor: pointer;
   transform-style: preserve-3d;
 }
 #euro.tails {
-  animation: spinTails 4s ease-out forwards;
+  animation: spinTails 5s ease-out forwards;
+  transform-style: preserve-3d;
 }
 #euro.heads {
-  animation: spinHeads 4s ease-out forwards;
+  animation: spinHeads 5s ease-out forwards;
+  transform-style: preserve-3d;
 }
 .back,
 .middle {
@@ -144,14 +145,61 @@
   offset: 100deg;
   position: absolute;
   background-size: cover;
+  transform-style: preserve-3d;
 }
 
+.front {
+  background-image: url("/pirate-heads.png");
+}
 .back {
-  background-image: url("/pirate-head.png");
-  filter: invert();
+  background-image: url("/pirate-tails.png");
+  transform: rotateZ(180deg);
 }
 .middle {
-  background-image: url("/pirate-head.png");
+  background-image: url("/pirate-heads.png");
+}
+
+@keyframes spinHeads {
+  40% {
+    scale: 2;
+  }
+  80% {
+    scale: 1;
+  }
+  100% {
+    transform: rotateX(1800deg);
+  }
+}
+
+@keyframes spinTails {
+  40% {
+    scale: 2;
+  }
+  80% {
+    scale: 1;
+  }
+  100% {
+    transform: rotateX(1980deg);
+  }
+}
+
+.glow {
+  font-size: 50px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
+      0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px yellow, 0 0 40px yellow,
+      0 0 50px yellow, 0 0 60px yellow, 0 0 70px yellow, 0 0 80px yellow;
+  }
 }
 
 .middle:nth-child(1) {
@@ -199,44 +247,48 @@
 .middle:nth-child(15) {
   transform: translateZ(15px);
 }
-
-@keyframes spinHeads {
-  40% {
-    scale: 2;
-  }
-  80% {
-    scale: 1;
-  }
-  100% {
-    transform: rotateX(1800deg);
-  }
+.middle:nth-child(16) {
+  transform: translateZ(16px);
 }
-
-@keyframes spinTails {
-  40% {
-    scale: 2;
-  }
-  80% {
-    scale: 1;
-  }
-  100% {
-    transform: rotateX(1980deg);
-  }
+.middle:nth-child(17) {
+  transform: translateZ(17px);
 }
-
-.glow {
-  font-size: 50px;
-  color: #fff;
-  text-align: center;
-  animation: glow 1s ease-in-out infinite alternate;
+.middle:nth-child(18) {
+  transform: translateZ(18px);
 }
-
-@keyframes glow {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-  }
-  
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px yellow, 0 0 40px yellow, 0 0 50px yellow, 0 0 60px yellow, 0 0 70px yellow, 0 0 80px yellow;
-  }
+.middle:nth-child(19) {
+  transform: translateZ(19px);
+}
+.middle:nth-child(20) {
+  transform: translateZ(20px);
+}
+.middle:nth-child(21) {
+  transform: translateZ(21px);
+}
+.middle:nth-child(22) {
+  transform: translateZ(22px);
+}
+.middle:nth-child(23) {
+  transform: translateZ(23px);
+}
+.middle:nth-child(24) {
+  transform: translateZ(24px);
+}
+.middle:nth-child(25) {
+  transform: translateZ(25px);
+}
+.middle:nth-child(26) {
+  transform: translateZ(26px);
+}
+.middle:nth-child(27) {
+  transform: translateZ(27px);
+}
+.middle:nth-child(28) {
+  transform: translateZ(28px);
+}
+.middle:nth-child(29) {
+  transform: translateZ(29px);
+}
+.middle:nth-child(30) {
+  transform: translateZ(30px);
 }

@@ -25,8 +25,9 @@ export default function Coinflip() {
 		setRotationText("flipping")
 		setTimeout(() => {
 			setRotationText(text)
-		}, 4000);
+		}, 5000);
 	}
+
 	return (
 		<Layout page="Coinflip">
 			<div className="my-10 flex flex-wrap justify-around">
@@ -65,28 +66,21 @@ export default function Coinflip() {
 						</span>
 					</div>
 
-					<div className="flex items-center gap-10">
-						<img className="" width={100} height={100} src="https://cdn3.iconfinder.com/data/icons/greek-mythology-3/500/zeus_greek_god_mythology_jupiter_lightning_character_thunder-512.png" alt="" />
+					<div className="flex items-center my-10 gap-10">
+						<img width={100} height={100} src="https://cdn3.iconfinder.com/data/icons/greek-mythology-3/500/zeus_greek_god_mythology_jupiter_lightning_character_thunder-512.png" alt="" />
 
 						<div id="euro">
-							<article className="middle"></article>
-							<article className="middle"></article>
-							<article className="middle"></article>
-							<article className="middle"></article>
-							<article className="middle"></article>
-							<article className="middle"></article>
-							<article className="middle"></article>
-							<article className="middle"></article>
-							<article className="middle"></article>
-							<article className="middle"></article>
+						<article className="front"></article>
+							{Array(30).fill("").map((_, i) => (
+								<article key={i} className="middle"></article>
+							))}
 							<article className="back"></article>
 						</div>
+
 						<img width={100} height={100} src="/skull.png" alt="" />
 					</div>
 
 					<button className="uppercase mx-auto hover:bg-yellow-700 font-bold px-4 py-2 rounded-sm bg-yellow-500 text-black" onClick={() => rotate()}>Start</button>
-
-
 				</div>
 
 				<Chatbox />
